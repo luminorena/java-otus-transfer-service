@@ -1,15 +1,18 @@
 package ru.otus.java.pro.spring.app.exceptions_handling;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-public class ErrorDto {
+public class BusinessLogicErrorDto {
     private String code;
     private String message;
+    private List<BusinessLogicFieldErrorDto> errors;
     private LocalDateTime dateTime;
 
-    public ErrorDto(String code, String message) {
+    public BusinessLogicErrorDto(String code, String message, List<BusinessLogicFieldErrorDto> errors) {
         this.code = code;
         this.message = message;
+        this.errors = errors;
         this.dateTime = LocalDateTime.now();
     }
 
@@ -27,6 +30,14 @@ public class ErrorDto {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public List<BusinessLogicFieldErrorDto> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(List<BusinessLogicFieldErrorDto> errors) {
+        this.errors = errors;
     }
 
     public LocalDateTime getDateTime() {

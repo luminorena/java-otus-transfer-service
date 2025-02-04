@@ -4,6 +4,14 @@ public class ValidationFieldErrorDto {
     private String field;
     private String message;
 
+    public ValidationFieldErrorDto() {
+    }
+
+    public ValidationFieldErrorDto(String field, String message) {
+        this.field = field;
+        this.message = message;
+    }
+
     public String getField() {
         return field;
     }
@@ -17,14 +25,6 @@ public class ValidationFieldErrorDto {
     }
 
     public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public ValidationFieldErrorDto() {
-    }
-
-    public ValidationFieldErrorDto(String field, String message) {
-        this.field = field;
         this.message = message;
     }
 }

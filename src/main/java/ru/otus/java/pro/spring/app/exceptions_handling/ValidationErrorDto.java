@@ -9,6 +9,13 @@ public class ValidationErrorDto {
     private List<ValidationFieldErrorDto> errors;
     private LocalDateTime dateTime;
 
+    public ValidationErrorDto(String code, String message, List<ValidationFieldErrorDto> errors) {
+        this.code = code;
+        this.message = message;
+        this.errors = errors;
+        this.dateTime = LocalDateTime.now();
+    }
+
     public String getCode() {
         return code;
     }
@@ -39,12 +46,5 @@ public class ValidationErrorDto {
 
     public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
-    }
-
-    public ValidationErrorDto(String code, String message, List<ValidationFieldErrorDto> errors) {
-        this.code = code;
-        this.message = message;
-        this.errors = errors;
-        this.dateTime = LocalDateTime.now();
     }
 }

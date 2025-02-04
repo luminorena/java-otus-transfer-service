@@ -1,13 +1,13 @@
 package ru.otus.java.pro.spring.app.exceptions_handling;
 
-public class ValidationFieldError {
+public class BusinessLogicFieldErrorDto {
     private String field;
     private String message;
 
-    public ValidationFieldError() {
+    public BusinessLogicFieldErrorDto() {
     }
 
-    public ValidationFieldError(String field, String message) {
+    public BusinessLogicFieldErrorDto(String field, String message) {
         this.field = field;
         this.message = message;
     }
