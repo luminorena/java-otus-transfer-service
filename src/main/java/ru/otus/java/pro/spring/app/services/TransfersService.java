@@ -1,5 +1,6 @@
 package ru.otus.java.pro.spring.app.services;
 
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.otus.java.pro.spring.app.dtos.ExecuteTransferDtoRq;
@@ -32,6 +33,9 @@ public class TransfersService {
         return transfersRepository.findAllByClientIdOrTargetClientId(clientId);
     }
 
+
+
+    @Transactional
     public Transfer execute(String clientId, ExecuteTransferDtoRq executeTransferDtoRq) {
         validateExecuteTransferDtoRq(executeTransferDtoRq);
 
